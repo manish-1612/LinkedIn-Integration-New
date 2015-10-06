@@ -21,7 +21,7 @@
     // Override point for customization after application launch.
     
     
-    [LISDKSessionManager createSessionWithAuth:@[LISDK_BASIC_PROFILE_PERMISSION] state:@"35336700" showGoToAppStoreDialog:TRUE successBlock:^(NSString *success) {
+    [LISDKSessionManager createSessionWithAuth:@[LISDK_BASIC_PROFILE_PERMISSION] state:@"35336700" showGoToAppStoreDialog:FALSE successBlock:^(NSString *success) {
         NSLog(@"success : %@", success);
     } errorBlock:^(NSError *error) {
         NSLog(@"erreor : %@", error);
