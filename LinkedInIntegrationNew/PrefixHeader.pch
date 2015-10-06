@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  LinkedInIntegrationNew
+//
+//  Created by Manish Kumar on 06/10/15.
+//  Copyright © 2015 Innofied Solutions Pvt. Ltd. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "AFNetworking.h"
+#define Client_ID 	    @"75i1ozbq93gwkb"
+#define Client_Secret	@"ceXgk6XHBlzoUEwv"
+
+
+#endif /* PrefixHeader_pch */
