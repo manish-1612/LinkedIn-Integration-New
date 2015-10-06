@@ -19,6 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    [LISDKSessionManager createSessionWithAuth:@[LISDK_BASIC_PROFILE_PERMISSION] state:@"35336700" showGoToAppStoreDialog:TRUE successBlock:^(NSString *success) {
+        NSLog(@"success : %@", success);
+    } errorBlock:^(NSError *error) {
+        NSLog(@"erreor : %@", error);
+    }];
+
+    
     return YES;
 }
 
