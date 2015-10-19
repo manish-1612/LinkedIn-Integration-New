@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <linkedin-sdk/LISDK.h>
+#import "WebViewController.h"
 
 @interface ViewController ()
 
@@ -46,7 +47,17 @@
     NSLog(@"url : %@", url);
     
     [[LISDKAPIHelper sharedInstance] getRequest:url success:^(LISDKAPIResponse *response) {
-        NSLog(@"response : %@", response);
+        NSLog(@"response : %@", response.data);
+        
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        
+        WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
+        webViewController.webData = response.data;
+        
+        [self presentViewController:webViewController animated:YES completion:nil];
+        
+        
     } error:^(LISDKAPIError *error) {
         NSLog(@"error : %@", error);
     }];

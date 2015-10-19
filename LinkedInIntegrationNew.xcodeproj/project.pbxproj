@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79EB4C711BD4DE370036959D /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79EB4C701BD4DE370036959D /* WebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		79F0AD791BC3C5B800BE43F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F0AD781BC3C5B800BE43F8 /* main.m */; };
 		79F0AD7C1BC3C5B800BE43F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F0AD7B1BC3C5B800BE43F8 /* AppDelegate.m */; };
 		79F0AD7F1BC3C5B800BE43F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79F0AD7E1BC3C5B800BE43F8 /* ViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79EB4C6F1BD4DE370036959D /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		79EB4C701BD4DE370036959D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		79F0AD741BC3C5B800BE43F8 /* LinkedInIntegrationNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkedInIntegrationNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F0AD781BC3C5B800BE43F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		79F0AD7A1BC3C5B800BE43F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				79F0AD7B1BC3C5B800BE43F8 /* AppDelegate.m */,
 				79F0AD7D1BC3C5B800BE43F8 /* ViewController.h */,
 				79F0AD7E1BC3C5B800BE43F8 /* ViewController.m */,
+				79EB4C6F1BD4DE370036959D /* WebViewController.h */,
+				79EB4C701BD4DE370036959D /* WebViewController.m */,
 				79F0AD801BC3C5B800BE43F8 /* Main.storyboard */,
 				79F0AD831BC3C5B800BE43F8 /* Assets.xcassets */,
 				79F0AD851BC3C5B800BE43F8 /* LaunchScreen.storyboard */,
@@ -345,6 +350,7 @@
 				79F1BF291BC40DAD00441AC7 /* AFNetworkReachabilityManager.m in Sources */,
 				79F1BF2D1BC40DAD00441AC7 /* AFURLResponseSerialization.m in Sources */,
 				79F1BF2B1BC40DAD00441AC7 /* AFURLConnectionOperation.m in Sources */,
+				79EB4C711BD4DE370036959D /* WebViewController.m in Sources */,
 				79F1BF2A1BC40DAD00441AC7 /* AFSecurityPolicy.m in Sources */,
 				79F1BF281BC40DAD00441AC7 /* AFHTTPSessionManager.m in Sources */,
 				79F1BF2C1BC40DAD00441AC7 /* AFURLRequestSerialization.m in Sources */,
