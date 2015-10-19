@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import <linkedin-sdk/LISDK.h>
-#import "WebViewController.h"
 
 @interface ViewController (){
     NSString *stringData;
@@ -30,34 +29,22 @@
 
 - (IBAction)startLinkedInIntegration:(UIButton *)sender {
     
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-   
-//    NSDictionary *dictionary = [[NSDictionary alloc]initWithObjects:@[@"code" , Client_ID , @"http://innofied.com", @"35336700", @"r_basicprofile"] forKeys:@[@"response_type", @"client_id", @"redirect_uri", @"state" , @"scope"]];
+    NSString *url = @"https://api.linkedin.com/v1/people/~";
     
-//    [manager GET:@"https://www.linkedin.com/uas/oauth2/authorization" parameters:dictionary success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-//            NSLog(@"JSON: %@", responseObject);
-//    } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
-//            NSLog(@"Error: %@", error);
-//    }];
-    
-//    [[LISDKAPIHelper sharedInstance] getRequest:@"https://www.linkedin.com/uas/oauth2/authorization"
-//                                        success:(void(^)(LISDKAPIResponse *))success
-//                                          error:(void(^)(LISDKAPIError *))error]
-    
-    
-    [self openWebViewVC];
-    
+    if ([LISDKSessionManager hasValidSession]) {
+        [[LISDKAPIHelper sharedInstance] getRequest:url
+                                            success:^(LISDKAPIResponse *response) {
+                                                // do something with response
+                                                NSLog(@"response : %@", response.data);
+                                            }
+                                              error:^(LISDKAPIError *apiError) {
+                                                  // do something with error
+                                                  NSLog(@"error : %@", apiError.localizedDescription);
+                                              }];
+    }
     
 
 }
 
--(void)openWebViewVC{
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
-    webViewController.webData = stringData;
-    [self presentViewController:webViewController animated:YES completion:nil];
-
-}
 
 @end
