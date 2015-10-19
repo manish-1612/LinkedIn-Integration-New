@@ -10,7 +10,9 @@
 #import <linkedin-sdk/LISDK.h>
 #import "WebViewController.h"
 
-@interface ViewController ()
+@interface ViewController (){
+    NSString *stringData;
+}
 
 @end
 
@@ -42,25 +44,20 @@
 //                                        success:(void(^)(LISDKAPIResponse *))success
 //                                          error:(void(^)(LISDKAPIError *))error]
     
-    NSString *url = [NSString stringWithFormat:@"https://www.linkedin.com/uas/oauth2/authorization?client_id=%@&redirect_uri=http://innofied.com&response_type=code&scope=%@&state=35336700",Client_ID, LISDK_BASIC_PROFILE_PERMISSION];
     
-    NSLog(@"url : %@", url);
+    [self openWebViewVC];
     
-    [[LISDKAPIHelper sharedInstance] getRequest:url success:^(LISDKAPIResponse *response) {
-        NSLog(@"response : %@", response.data);
-        
-        
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        
-        WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
-        webViewController.webData = response.data;
-        
-        [self presentViewController:webViewController animated:YES completion:nil];
-        
-        
-    } error:^(LISDKAPIError *error) {
-        NSLog(@"error : %@", error);
-    }];
+    
 
 }
+
+-(void)openWebViewVC{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"webViewController"];
+    webViewController.webData = stringData;
+    [self presentViewController:webViewController animated:YES completion:nil];
+
+}
+
 @end

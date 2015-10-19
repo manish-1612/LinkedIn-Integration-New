@@ -7,8 +7,9 @@
 //
 
 #import "WebViewController.h"
+#import <linkedin-sdk/LISDK.h>
 
-@interface WebViewController ()
+@interface WebViewController ()<UIWebViewDelegate>
 
 @end
 
@@ -18,12 +19,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [_webview loadHTMLString:_webData baseURL:nil];
+    //_webview.frame = self.view.frame;
+    
+    NSString *url = [NSString stringWithFormat:@"https://www.linkedin.com/uas/oauth2/authorization?client_id=%@&redirect_uri=http://innofied.com&response_type=code&scope=%@&state=35336700",Client_ID, LISDK_BASIC_PROFILE_PERMISSION];
+    
+    _webview.delegate = self;
+    [[LISDKAPIHelper sharedInstance] getRequest:url success:^(LISDKAPIResponse *response) {
+        NSLog(@"response : %@", response.data);
+        
+        [_webview loadHTMLString:response.data baseURL:nil];
+        
+        
+        
+        
+    } error:^(LISDKAPIError *error) {
+        NSLog(@"error : %@", error);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
 }
 
 /*
